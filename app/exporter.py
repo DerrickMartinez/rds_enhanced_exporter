@@ -43,22 +43,23 @@ class EnhancedRDSCollector(object):
       message = json.loads(response['events'][0]['message'])
       result_tree = Tree(message)
       instance_id = message['instanceID']
+      engine = message['engine']
 
       # Parse uptime to a number and produce a metric
       logging.info(message['uptime'])
       uptime = self.uptime_to_num(message['uptime'])
-      c = CounterMetricFamily('uptime', 'RDS uptime in seconds', labels=['db'])
-      c.add_metric([instance_id], uptime)
+      c = CounterMetricFamily('rds_enhanced_uptime', 'RDS uptime in seconds', labels=['db','engine'])
+      c.add_metric([instance_id,engine], uptime)
       yield c
 
       logging.info(instance_id)
-      for metric_config in metrics['metrics']:
+      for metric_config in metrics['metrics'][engine]:
         metric_description = metric_config.get('description', '')
         metric_path = metric_config['path']
         value = result_tree.execute(metric_path)
         logging.info("metric_name: {}, value for '{}' : {}".format(metric_config['name'], metric_path, value))
-        c = CounterMetricFamily(metric_config['name'], metric_description, labels=['db'])
-        c.add_metric([instance_id], value)
+        c = CounterMetricFamily(metric_config['name'], metric_description, labels=['db','engine'])
+        c.add_metric([instance_id,engine], value)
         yield c
 
 if __name__ == "__main__":
