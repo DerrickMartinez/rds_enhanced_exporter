@@ -1,0 +1,129 @@
+metrics:
+# Basic
+- name: num_vcpus
+  description: Number of vCPUs
+  path: $.numVCPUs
+# CPU
+- name: rds_enhanced_cpu_utilization_guest
+  description: CPU Utilization Guest
+  path: $.cpuUtilization.guest
+- name: rds_enhanced_cpu_utilization_irq
+  description: CPU Utilization IRQ
+  path: $.cpuUtilization.irq
+- name: rds_enhanced_cpu_utilization_system
+  description: CPU Utilization System
+  path: $.cpuUtilization.system
+- name: rds_enhanced_cpu_utilization_wait
+  description: CPU Utilization IO Wait
+  path: $.cpuUtilization.wait
+- name: rds_enhanced_cpu_utilization_idle
+  description: CPU Utilization Idle
+  path: $.cpuUtilization.idle
+- name: rds_enhanced_cpu_utilization_user
+  description: CPU Utilization User
+  path: $.cpuUtilization.user
+- name: rds_enhanced_cpu_utilization_total
+  description: CPU Utilization Total
+  path: $.cpuUtilization.total
+- name: rds_enhanced_cpu_utilization_steal
+  description: CPU Utilization Steal
+  path: $.cpuUtilization.steal
+- name: rds_enhanced_cpu_utilization_nice
+  description: CPU Utilization Nice
+  path: $.cpuUtilization.nice
+# Load Average
+- name: rds_enhanced_load_average_minute_fifteen
+  description: Load Average 15 minutes
+  path: $.loadAverageMinute.fifteen
+- name: rds_enhanced_load_average_minute_five
+  description: Load Average 5 minutes
+  path: $.loadAverageMinute.five
+- name: rds_enhanced_load_average_minute_one
+  description: Load Average 1 minute
+  path: $.loadAverageMinute.one
+# Memory
+- name: rds_enhanced_memory_cached
+  description: Cached Memory
+  path: $.memory.cached
+- name: rds_enhanced_memory_free
+  description: Free Memory
+  path: $.memory.free
+- name: rds_enhanced_memory_active
+  description: Active Memory
+  path: $.memory.active
+- name: rds_enhanced_memory_total
+  description: Total Memory
+  path: $.memory.total
+- name: rds_enhanced_memory_buffers
+  description: Memory Buffers
+  path: $.memory.buffers
+# Swap
+- name: rds_enhanced_swap_total
+  description: Total Swap
+  path: $.swap.total
+- name: rds_enhanced_swap_free
+  description: Free Swap
+  path: $.swap.free
+# Network
+- name: rds_enhanced_network_rx
+  description: Network RX
+  path: $.network[0].rx
+- name: rds_enhanced_network_tx
+  description: Network TX
+  path: $.network[0].tx
+# Disk IO
+- name: rds_enhanced_disk_writekbps
+  description: Disk writeKbPS
+  path: $.diskIO[0].writeKbPS
+- name: rds_enhanced_disk_readiosps
+  description: Disk readIOsPS
+  path: $.diskIO[0].readIOsPS
+- name: rds_enhanced_disk_await
+  description: Disk await
+  path: $.diskIO[0].await
+- name: rds_enhanced_disk_readkbps
+  description: Disk readKbPS
+  path: $.diskIO[0].readKbPS
+- name: rds_enhanced_disk_rrqmps
+  description: Disk rrqmPS
+  path: $.diskIO[0].rrqmPS
+- name: rds_enhanced_disk_util
+  description: Disk util
+  path: $.diskIO[0].util
+- name: rds_enhanced_disk_avgqueuelen
+  description: Disk avgQueueLen
+  path: $.diskIO[0].avgQueueLen
+- name: rds_enhanced_disk_tps
+  description: Disk tps
+  path: $.diskIO[0].tps
+- name: rds_enhanced_disk_writekb
+  description: Disk writeKb
+  path: $.diskIO[0].writeKb
+- name: rds_enhanced_disk_avgreqsz
+  description: Disk avgReqSz
+  path: $.diskIO[0].avgReqSz
+- name: rds_enhanced_disk_wrqmps
+  description: Disk wrqmPS
+  path: $.diskIO[0].wrqmPS
+- name: rds_enhanced_disk_writeiosps
+  description: Disk writeIOsPS
+  path: $.diskIO[0].writeIOsPS
+# File System
+- name: rds_enhanced_filesys_used
+  description: FileSys Used
+  path: $.fileSys[0].used
+- name: rds_enhanced_filesys_used_files
+  description: FileSys Used Files
+  path: $.fileSys[0].usedFiles
+- name: rds_enhanced_filesys_used_file_percent
+  description: FileSys Used Files Percent
+  path: $.fileSys[0].usedFilePercent
+- name: rds_enhanced_filesys_maxfiles
+  description: FileSys Maxfiles
+  path: $.fileSys[0].maxFiles
+- name: rds_enhanced_filesys_total
+  description: FileSys Total
+  path: $.fileSys[0].total
+- name: rds_enhanced_filesys_used
+  description: FileSys Used Percent
+  path: $.fileSys[0].usedPercent
