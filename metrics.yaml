@@ -1,6 +1,6 @@
 metrics:
 # Basic
-- name: num_vcpus
+- name: rds_enhanced_cpu_num_vcpus
   description: Number of vCPUs
   path: $.numVCPUs
 # CPU
